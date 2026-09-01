@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>なないろカウントダウナー</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CounterStyle.css">
+        <!-- Open Graph -->
+        <meta property="og:title" content="なないろカウントダウナー">
+        <meta property="og:description" content="ななたまに関するあれこれをカウントアップしていきます。">
+        <meta property="og:image" content="https://rgb65bit.github.io/NanaCounter/EnbedImage.png">
+        <meta property="og:url" content="https://rgb65bit.github.io/NanaCounter/NanairoCounter.html">
+        <meta property="og:type" content="website">
+        <!-- X(Twitter)専用タグ -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="なないろカウントダウナー">
+        <meta name="twitter:description" content="ななたまに関するあれこれをカウントアップしていきます。">
+        <meta name="twitter:image" content="https://rgb65bit.github.io/NanaCounter/EnbedImage.png">
+    </head>
+    <body>
+        <!-- ヘッダーを設計 -->
+        <div class="header">
+            <h1 style="font-family:'Mochiy Pop One'">なないろカウントダウナー</h1>
+            <nav>
+                <a href="NanatamaCounter.html">ななたまカウンター</a>
+                <a href="NanakamaCounter.html">ななかまカウンター</a>
+                <a href="NanairoCounter.html">なないろカウンター</a>
+                <a href="NanairoCounter_Down.html">なないろカウントダウナー</a>
+            </nav>
+        </div>
+        <div style="margin-top: 40px;">
+            <p>なないろ、7種類以上のいろいろなカウントをお選びいただけます。</p>
+            <img style="background-color:#FFFFFF; display:block; margin:0 auto; width:35%; height:auto; border-radius:50%; border: 4px solid #FFC547; box-shadow: 0 0 70px rgba(255, 255, 255, 0.3);" src="Nana.png" alt="Nana Tamanoi">
+        </div>
+        <!-- 主のカウントアッパー -->
+        <select id="CounterType">
+            <option style="background-color:#777777;" value="None">カウントの種類を選択する</option>
+            <option value="NextBD">次の誕生日</option>
+            <option value="NextAN">次の周年記念</option>
+        </select>
+        <div class="content">
+            <p id="heading"></p>
+            <div id="NanatamaLiveCounter"></div> 
+        </div>
+        <!-- 総経過秒数と現在時刻を表示する -->
+        <div class="content2" id="content2">
+            <p>総秒数は、</p>
+            <div id="totalSeconds"></div>
+            <p>秒です！</p>
+        </div>
+        <div class="content3">
+            <p>現在時刻：</p>
+            <div id="currentTime"></div>
+        </div>
+        <div id="TergetDisp" style="display:flex; justify-content:center;"><p>目標時刻：</p><p id="TargetTime"></p></div>
+        <!-- Please Share! -->
+        <a style="text-decoration:none;" id="PostingLink" href="" target="_blank"><button id="ShareToX">Xに共有(ポストの作成画面が開きます！)</button></a>
+        <!-- なんか見にくいから仕切り～ -->
+        <div id="border" style="border: 1px solid #FFF; width: 95%;"></div>
+
+        <div class="line">
+            <p>換算してみる</p>
+            <select id="WhatCanWeDoInTheTime">
+                <option style="background-color:#777777;" value="None">(対象を選択する)</option>
+                <option value="Beats">心拍</option>
+                <option value="Syaoran">シャオシャオ蘭々</option>
+                <option value="Dokikyun">どきどきキュン！で大暴走♡</option>
+                <option value="Muriota">無理すぎ♡オタクハート</option>
+                <option value="Kcal">熱量</option>
+                <option value="Film">フィルム</option>
+                <option value="RawVideo">動画</option>
+                <option value="PCMAudio">音声</option>
+                <option value="FullMoon">満月</option>
+                <option value="SS">歌枠</option>
+                <option value="CD">音楽CD</option>
+            </select>
+        </div>
+        <div style="margin-bottom: 24px;" class="Iroiro">期間をわかりやすい単位に換算します！</div>
+        <footer class="Credit">
+            サイトで使用している写真の著作権は、ANYCOLOR株式会社に帰属します。<br>
+            プログラミング：<a href="https://x.com/RGB65bit">RGB65bit</a><a href="javascript:void(0)" id="CreditButton">クレジット</a><br>
+            本サイトは、<a href="https://www.anycolor.co.jp/guidelines/">ANYCOLOR二次創作ガイドライン</a>に基づき制作しています。
+        </footer>
+
+        <script src="CounterProsessor.js"></script>
+        <script>
+            function NanatamaLiveTime(){ //でっかいカウントの処理
+                let StartTime = 0
+                let HeadingText
+                let NowDate
+                let NowYear
+                let TergetD
+                let IntervalLength
+                const StartThing = document.getElementById('CounterType').value;
+                if (StartThing === "None"){
+                    HeadingText = "カウントを選択してね！";
+                    document.getElementById("heading").textContent = HeadingText;
+                    document.getElementById("TargetTime").textContent = "";
+                    document.getElementById('NanatamaLiveCounter').textContent = ""
+                    content2.style.display = "none"
+                    TergetDisp.style.display = "none"
+                    NanaLiveDays = 0
+                    NanaLiveSecond = 0
+                    return
+                }
+                else if (StartThing === "NextBD"){
+                    HeadingText = "珠乃井ナナの次の誕生日まで..."
+                    NowDate = new Date() //現在時刻をUNIXで取得
+                    NowYear = NowDate.getFullYear()//年
+                    if(NowDate > (new Date(`${NowYear}-04-24T00:00:00+09:00`))){//もしことしの開始時間を過ぎていた場合
+                        if(NowDate < (new Date(`${NowYear}-04-25T00:00:00+09:00`))){//当日の場合
+                            TergetD = new Date(`${NowYear}-04-25T00:00:00+09:00`)
+                            HeadingText = "珠乃井ナナの今年の誕生日終了まで..."
+                        }
+                        else{
+                            NowYear  = NowYear + 1 
+                            TergetD = new Date(`${NowYear}-04-24T00:00:00+09:00`) //来年の誕生日のUNIX取得
+                        }
+                    }
+                    else{
+                        TergetD = new Date(`${NowYear}-04-24T00:00:00+09:00`) //今年がまだ来ていない場合
+                    }
+                    IntervalLength = Math.floor((TergetD - NowDate) / 1000) //「差」とかいうやつを求める
+                    content2.style.display = ""
+                    TergetDisp.style.display = "flex"
+                }
+                else if (StartThing === "NextAN"){
+                    HeadingText = "珠乃井ナナの次の周年記念日まで..."
+                    NowDate = new Date() //現在時刻をUNIXで取得
+                    NowYear = NowDate.getFullYear()//年
+                    if(NowDate > (new Date(`${NowYear}-06-19T00:00:00+09:00`))){//もしことしの開始時間を過ぎていた場合
+                        if(NowDate < (new Date(`${NowYear}-06-20T00:00:00+09:00`))){//当日の場合
+                            TergetD = new Date(`${NowYear}-06-20T00:00:00+09:00`)
+                            HeadingText = "珠乃井ナナの今年の周年記念日終了まで..."
+                        }
+                        else{
+                            NowYear  = NowYear + 1 
+                            TergetD = new Date(`${NowYear}-06-19T00:00:00+09:00`) //来年の誕生日のUNIX取得
+                        }
+                    }
+                    else{
+                        TergetD = new Date(`${NowYear}-06-19T00:00:00+09:00`) //今年がまだ来ていない場合
+                    }
+                    IntervalLength = Math.floor((TergetD - NowDate) / 1000) //「差」とかいうやつを求める
+                    content2.style.display = ""
+                    TergetDisp.style.display = "flex"
+                }
+
+                document.getElementById("heading").textContent = HeadingText;
+                document.getElementById("TargetTime").textContent = TergetD.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+                const NanaNow = Math.floor(Date.now() / 1000);
+                const NanaDifference = Math.floor(TergetD / 1000) - Math.floor(NowDate / 1000);
+                const NanaNowSec = NanaDifference % 60; //UNIX時間を60で割ったあまりを求め、秒数を確定
+                const NanaNowMinTemp = Math.floor(NanaDifference / 60); //UNIX時間を60で割った商のみを求め、分数を計算しやすくする(小数点以下は秒数となる)
+                const NanaNowMin = NanaNowMinTemp % 60; //分数を60で割ったあまりを求め、分数を確定
+                const NanaNowHouTemp = Math.floor(NanaNowMinTemp / 60); //分数を60で割った商のみを求め、時間数を計算しやすくする(少数点以下は分数となる)
+                const NanaNowHou = NanaNowHouTemp % 24; //時間数を24で割ったあまりを求め、時間数を確定
+                const NanaDay = Math.floor(NanaNowHouTemp / 24); //時間数を24で割った商のみを求め、日数を確定
+                NanaLiveSecond = NanaDifference; //グローバル変数にして、他の関数でも使う
+                NanaLiveDays = NanaDay
+                document.getElementById('NanatamaLiveCounter').textContent = `${NanaDay}日と ${NanaNowHou}時間 ${NanaNowMin}分 ${NanaNowSec}秒  です！`; //文字列更新
+                document.getElementById('PostingLink').href = `https://x.com/intent/post?text=` + encodeURIComponent(`#なないろカウンター\n` + HeadingText + `${NanaDay}日と${NanaNowHou}時間${NanaNowMin}分${NanaNowSec}秒です！\n目標時刻は、${TergetD.toLocaleString()}です。\nhttps://x.gd/NanairoCounter`); //Xのリンク更新
+            };
+            document.getElementById('CounterType').addEventListener('change',Intervaler_Down);
+            document.getElementById('WhatCanWeDoInTheTime').addEventListener('change',Intervaler_Down);
+            Intervaler_Down();
+            document.getElementById('CreditButton').addEventListener('click', () => {
+                    alert(`【クレジット】\n使用フォント:Mochiy Pop One\n使用画像:にじさんじ公式サイト、珠乃井ナナのページより`)
+                })
+            setInterval(Intervaler_Down, 1000) //1000msごとに実行
+        </script>
+    </body>
+</html>
