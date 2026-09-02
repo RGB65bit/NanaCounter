@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ななたまカウンター</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Mochiy+Pop+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CounterStyle.css">
+        <!-- Open Graph -->
+        <meta property="og:title" content="ななたまカウンター">
+        <meta property="og:description" content="ななたまに関するあれこれをカウントアップしていきます。">
+        <meta property="og:image" content="https://rgb65bit.github.io/NanaCounter/EnbedImage.png">
+        <meta property="og:url" content="https://rgb65bit.github.io/NanaCounter/NanatamaCounter.html">
+        <meta property="og:type" content="website">
+        <!-- X(Twitter)専用タグ -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="ななたまカウンター">
+        <meta name="twitter:description" content="ななたまに関するあれこれをカウントアップしていきます。">
+        <meta name="twitter:image" content="https://rgb65bit.github.io/NanaCounter/EnbedImage.png">
+    </head>
+    <body>
+        <!-- ヘッダーを設計 -->
+        <div class="header">
+            <h1>ななたまカウンター</h1>
+            <nav>
+                <a href="NanatamaCounter.html">ななたまカウンター</a>
+                <a href="NanakamaCounter.html">ななかまカウンター</a>
+                <a href="NanairoCounter.html">なないろカウンター</a>
+                <a href="NanairoCountdowner.html">なないろカウントダウナー</a>
+            </nav>
+        </div>
+        <div style="margin-top: 40px;">
+            <p>珠乃井ナナがデビューしてからどれくらいたったのかをカウントします。</p>
+            <img style="background-color:#FFFFFF; display:block; margin:0 auto; width:35%; height:auto; border-radius:50%; border: 4px solid #FFC547; box-shadow: 0 0 70px rgba(255, 255, 255, 0.3);" src="Nana.png" alt="Nana Tamanoi">
+        </div>
+        <!-- 主のカウントアッパー -->
+        <div class="content">
+            <p>珠乃井ナナがデビューしてから...</p>
+            <div id="NanatamaLiveCounter"></div> 
+        </div>
+        <!-- 総経過秒数と現在時刻を表示する -->
+        <div class="content2">
+            <p>総経過秒数は、</p>
+            <div id="totalSeconds"></div>
+            <p>秒です！</p>
+        </div>
+        <div class="content3">
+            <p>現在時刻：</p>
+            <div id="currentTime"></div>
+        </div>
+        <!-- attention的な -->
+        <p style="margin-top:0; text-align:center;">(デビュー日時を2024年6月19日18:00(日本時間)として扱っています。)</p>
+        <!-- Please Share! -->
+        <a style="text-decoration:none;" id="PostingLink" href="" target="_blank"><button id="ShareToX">Xに共有(ポストの作成画面が開きます！)</button></a>
+        <!-- なんか見にくいから仕切り～ -->
+        <div id="border" style="border: 1px solid #FFF; width: 95%;"></div>
+
+        <div class="line">
+            <p>換算してみる</p>
+            <select id="WhatCanWeDoInTheTime">
+                <option style="background-color:#777777;" value="None">(対象を選択する)</option>
+                <option value="Beats">心拍</option>
+                <option value="Syaoran">シャオシャオ蘭々</option>
+                <option value="Dokikyun">どきどきキュン！で大暴走♡</option>
+                <option value="Muriota">無理すぎ♡オタクハート</option>
+                <option value="Kcal">熱量</option>
+                <option value="Film">フィルム</option>
+                <option value="RawVideo">動画</option>
+                <option value="PCMAudio">音声</option>
+                <option value="FullMoon">満月</option>
+                <option value="SS">歌枠</option>
+                <option value="CD">音楽CD</option>
+            </select>
+        </div>
+        <div style="margin-bottom: 24px;" class="Iroiro">これまでをわかりやすい単位に換算します！</div>
+        <footer class="Credit">
+            サイトで使用している写真の著作権は、ANYCOLOR株式会社に帰属します。<br>
+            プログラミング：<a href="https://x.com/RGB65bit">RGB65bit</a><a href="javascript:void(0)" id="CreditButton">クレジット</a><br>
+            本サイトは、<a href="https://www.anycolor.co.jp/guidelines/">ANYCOLOR二次創作ガイドライン</a>に基づき制作しています。
+        </footer>
+
+        <script src="CounterProsessor.js"></script>
+        <script>
+            function NanatamaLiveTime(){ //でっかいカウントの処理
+                const NanaDebut = Math.floor(new Date('2024-06-19T18:00:00+09:00').getTime() / 1000);
+                const NanaNow = Math.floor(Date.now() / 1000); //現在のUNIX時間を取得
+                const NanaDifference = NanaNow - NanaDebut //差分秒を計算する
+                const NanaNowSec = NanaDifference % 60; //UNIX時間を60で割ったあまりを求め、秒数を確定
+                const NanaNowMinTemp = Math.floor(NanaDifference / 60); //UNIX時間を60で割った商のみを求め、分数を計算しやすくする(小数点以下は秒数となる)
+                const NanaNowMin = NanaNowMinTemp % 60; //分数を60で割ったあまりを求め、分数を確定
+                const NanaNowHouTemp = Math.floor(NanaNowMinTemp / 60); //分数を60で割った商のみを求め、時間数を計算しやすくする(少数点以下は分数となる)
+                const NanaNowHou = NanaNowHouTemp % 24; //時間数を24で割ったあまりを求め、時間数を確定
+                const NanaDay = Math.floor(NanaNowHouTemp / 24); //時間数を24で割った商のみを求め、日数を確定
+                NanaLiveSecond = NanaDifference; //グローバル変数にして、他の関数でも使う
+                NanaLiveDays = NanaDay
+                document.getElementById('NanatamaLiveCounter').textContent = `${NanaDay}日と ${NanaNowHou}時間 ${NanaNowMin}分 ${NanaNowSec}秒  経過しました！`; //文字列更新
+                document.getElementById('PostingLink').href = `https://x.com/intent/post?text=` + encodeURIComponent(`#ななたまカウンター\n珠乃井ナナがデビューしてから、${NanaDay}日と${NanaNowHou}時間${NanaNowMin}分${NanaNowSec}秒経過しました！\nhttps://x.gd/NanatamaCounter`); //Xのリンク更新
+            };
+            document.getElementById('WhatCanWeDoInTheTime').addEventListener('change',Intervaler);
+            Intervaler();
+            document.getElementById('CreditButton').addEventListener('click', () => {
+                    alert(`【クレジット】\n使用フォント:Mochiy Pop One\n使用画像:にじさんじ公式サイト、珠乃井ナナのページより`)
+                })
+            setInterval(Intervaler, 1000) //1000msごとに実行
+        </script>
+    </body>
+</html>

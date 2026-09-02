@@ -1,0 +1,174 @@
+*{font-family:'Mochiy Pop One'}
+/**{
+    font-family:'Google Sans','Noto Sans';
+    font-weight: bold;
+}*/
+body {                
+    background-color: #63aed9;
+    color:#FFC547;
+}
+.header {
+    font-size:20px;
+    background-color: #FFC547;
+    font-weight:normal;
+    padding:0;
+    margin:0;            
+    position:sticky;
+    top:0px;
+    left:0px;
+    width:100%;
+}
+#border{
+    margin: 0 auto;
+}
+nav{
+    justify-content: space-around;
+    overflow: hidden;
+    display:flex;
+}
+nav a {
+    font-size: 16px;
+    padding: 10px;
+    border: 3px solid #FFF;
+    text-align: center;
+    width: 100%;
+    margin:0;
+    text-decoration: none;
+    color: #63aed9;
+    transition: 0.15s;
+}
+a:hover{
+    color:#000;
+    background-color:#63aed9;
+}
+.headershape {
+    background-color: #63aed9;
+    height: 10px;
+    width: 100%;
+}
+h1{
+    margin:0;
+    color:#63aed9;
+    padding-left:10px;
+}
+.content {
+    line-height:1;
+    font-size: 40px;
+    margin:0px;
+    text-align: center;
+    color: #ffc547;
+    margin-top: 20px;
+}
+.content2 {
+    font-size: 20px;
+    text-align: center;
+    color: #ffc547;
+    margin:0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.content3 {
+    font-size: 20px;
+    text-align: center;
+    color: #ffc547;
+    margin:0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+#ShareToX {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FFC547;
+    color: #63aed9;
+    border: 2px solid #FFF;
+    cursor: pointer;
+}
+#ShareToX:hover{
+    color:#000;
+    background-color:#63aed9;
+}
+select#WhatCanWeDoInTheTime{
+    margin:10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: #FFC547;
+    color: #63aed9;
+    border: 2px solid #FFF;
+    border-radius: 0px 0px 0px 14px;
+    cursor: pointer;
+}
+select#CounterType{
+    margin:10px;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: #FFC547;
+    color: #63aed9;
+    border: 2px solid #FFF;
+    border-radius: 14px 0px 0px 0px;
+    cursor: pointer;
+}
+select option {
+    background-color: #FFF;
+    color: #63aed9;
+}
+.line{
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+.Iroiro{
+    white-space: pre-line;
+}
+input{
+    background-color:#63aed9;
+    color:#FFc547;
+    border:2px solid #FFF;
+}
+.Credit {
+    width: 100%;
+    background: #ffc547;
+    color: #63aed9;
+    text-align: center;
+    padding:10px 0px;
+    margin:0;
+    font-size: 14px;
+}
+#CreditButton{
+    margin-left: 7px;
+}
+#TergetDisp{
+    display:flex;
+    justify-content:center;
+    box-sizing:border-box;
+}
+.ProgBarMain{
+    display:flex;
+    width:50%;
+    height:100%;
+    background-color:#ffc547;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.ProgBarBox{
+    margin:0 auto;
+    height:20px;
+    width:100%;
+    background-color:#63aed9;
+    border:#FFC547 1px solid;
+    box-sizing: border-box;
+}
+#BorderBorder{
+    border:#FFFFFF 2px solid;
+    width:85%;
+    box-sizing:border-box;
+    margin: 0 auto;
+    border-radius:4px;
+    overflow: hidden;
+}
