@@ -27,10 +27,10 @@ const UpdateLog = [
   {
     Date:"20260929",
     Version:"v1.1.4",
-    Description:"まーだなんか書式がおかしかったので修正。ついでにconsole.degugで全部出力するようにした。"
+    Description:"まーだなんか書式がおかしかったので修正。ついでにconsole.debugで全部出力するようにした。"
   }
 ]
 
 const NowVersion = UpdateLog[UpdateLog.length - 1].Version
 document.getElementById("Version").textContent = NowVersion
-console.degug(UpdateLog)
+console.debug(UpdateLog)
