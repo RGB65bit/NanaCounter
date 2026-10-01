@@ -1,0 +1,51 @@
+const UpdateLog = [
+  {
+    Date:"20260921",
+    Version:"v1.0.0",
+    Description:"完成"
+  },
+  {
+    Date:"20260928",
+    Version:"v1.1.0",
+    Description:"index.htmlを仮実装した"
+  },
+  {
+    Date:"20260928",
+    Version:"v1.1.1",
+    Description:"index.htmlを本実装。それに伴って、index.htmlの内部CSSをCommonCounterStyle.cssに統合。index.htmlにCounterProsessor.jsのscriptタグが抜けていたのを修正。VersionUpdate.js(<-つまり本ファイル)の書き方をちょいと弄った(バージョン表記を一旦変数を介すようにした。)。後々どこかで使うようの配列：UpdateLogの枠を用意した。"
+  },
+  {
+    Date:"20260928",
+    Version:"v1.1.2",
+    Description:"このJSがバグっていたので修正"
+  },
+  {
+    Date:"20260928",
+    Version:"v1.1.3",
+    Description:"このログの書式をいじくった。バージョンをどうやって扱うかを変更し、このログを定義してから.lengthとNowVersion変数を使って、このログの最後のVersionの値を読むようにした。"
+  },
+  {
+    Date:"20260929",
+    Version:"v1.1.4",
+    Description:"まーだなんか書式がおかしかったので修正。ついでにconsole.debugで全部出力するようにした。"
+  },
+  {
+    Date:"20261001",
+    Version:"v1.2.0",
+    Description:"html要素に背景画像を指定し、body要素の余白とパッディングを0にした。そのせいで崩れた解説文とか換算機能のレイアウトを整えた。(主にCSSの改造)"
+  },
+  {
+    Date:"20261001",
+    Version:"v1.2.1",
+    Description:"フッター要素とクレジットをちょっと改変。(JSファイルの改造)"
+  },
+  {
+    Date:"20261001",
+    Version:"v1.2.2",
+    Description:"フッター改造したら改造しなくていいところまで改造していたので、そこを消した。(index.html用のマージンがすべてに適用されていた)"
+  }
+]
+
+const NowVersion = UpdateLog[UpdateLog.length - 1].Version
+document.getElementById("Version").textContent = NowVersion
+console.debug(UpdateLog)

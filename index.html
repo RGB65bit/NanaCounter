@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カウンターインデックス</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Kaisei+Tokumin&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 変わるCSSとそうじゃないやつを分ける -->
+    <link id="AppliedStylesheet" rel="stylesheet" href="CounterStyle.css">
+    <!-- 変わんないところ -->
+    <link id="CommonStylesheet" rel="stylesheet" href="CommonCounterStyle.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="header2">
+        <h1>カウンターインデックス</h1>
+        <p class="Version" id="Version"></p>
+        <button id="ChangeFont">フォントを変更！</button>
+      </div>
+      <nav>
+        <a href="NanatamaCounter.html">ななたまカウンター</a>
+        <a href="NanakamaCounter.html">ななかまカウンター</a>
+        <a href="NanairoCounter.html">なないろカウンター</a>
+        <a href="NanairoCountdowner.html">なないろカウントダウナー</a>
+      </nav>
+    </div>
+    <p id="TopExplain">カウンターの一覧です。各カウンター名をクリックして遷移できます。</p>
+
+    <h2 class="NavIndexBox"><a href="NanatamaCounter.html" class="NavigatorInIndex">ななたまカウンター</a></h2>
+    <ul>
+      <p>
+        珠乃井ナナのデビュー日時、2024年6月19日18時00分（日本時間）からの経過時間を表示します。<br>
+        換算機能を搭載し、複数の身近な単位で時間の経過を感じることができます。
+      </p>
+    </ul>
+
+    <h2 class="NavIndexBox"><a href="NanakamaCounter.html" class="NavigatorInIndex">ななかまカウンター</a></h2>
+    <ul>
+      <p>
+        ななかまになった・珠乃井ナナを知ってからの日時からの経過時間を表示します。<br>
+        ななかまになった日時は、HTML要素の入力ボックスで設定できます。(デフォルト値は私の場合です。)<br>
+        換算機能を搭載し、複数の身近な単位で時間の経過を感じることができます。
+      </p>
+    </ul>
+
+    <h2 class="NavIndexBox"><a href="NanairoCounter.html" class="NavigatorInIndex">なないろカウンター</a></h2>
+    <ul>
+      <p>
+        なないろ≒色んな種類のカウント基準を選択し、カウントを表示します。<br>
+        デビュー日時、登録者マイルストーン、衣装お披露目など、7種を超えるカウントを実装しています。<br>
+        換算機能を搭載し、複数の身近な単位で時間の経過を感じることができます。
+      </p>
+    </ul>
+
+    <h2 class="NavIndexBox"><a href="NanairoCountdowner.html" class="NavigatorInIndex">なないろカウントダウナー</a></h2>
+    <ul>
+      <p>
+        なないろ...と言いつつ、v1.0で実装しているカウント基準は2つしかございません...<br>
+        次の誕生日、次の周年記念などのカウントを実装しています。<br>
+        換算機能を搭載し、複数の身近な単位で時間の経過を感じることができます。
+      </p>
+    </ul>
+
+    <footer class="Credit" style="margin-top: 128px;">
+      プログラミング：<a target="_blank" rel="noopener noreferrer" href="https://x.com/RGB65bit">RGB65bit</a><a href="javascript:void(0)" id="CreditButton">クレジット</a><br>
+      サイトで使用している写真の著作権は、ANYCOLOR株式会社に帰属します。<br>
+      本サイトは、<a target="_blank" rel="noopener noreferrer" href="https://www.anycolor.co.jp/guidelines/">ANYCOLOR二次創作ガイドライン</a>に基づく二次創作作品です。<br>
+      公式関係者様とは一切関係ありません。関係者様への問い合わせはご遠慮ください。
+    </footer>
+
+  <script src="CounterProsessor.js"></script>
+  <script src="VersionUpdate.js"></script>
+  </body>
+</html>
