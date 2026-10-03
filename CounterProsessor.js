@@ -70,12 +70,12 @@ function SelectedThings() { //プルダウンに応じて表示を変えたり
     else if (Selected ==="LightSpeed"){
         const LightSpeed = 300000000 //これはメートル(m/sだぜぇ)
         const LightSpeedLengthKiro = (LightSpeed * NanaLiveSecond)/1000
-        document.querySelector('.Iroiro').textContent = `いままでの間、光速で移動すると、${LightSpeedLengthKiro.toLocaleString()}キロメートル移動できます\n。これは、月と地球を${Math.trunc((LightSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${Math.trunc((LightSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
+        document.querySelector('.Iroiro').textContent = `いままでの間、光速で移動すると、${LightSpeedLengthKiro.toLocaleString()}キロメートル移動できます。\nこれは、月と地球を${Math.trunc((LightSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${Math.trunc((LightSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
     }
     else if (Selected ==="Sonic"){
         const SonicSpeed = 340 //これはメートル(m/sだぜぇ)、大気中で確か気温15.0セルシウス度の時の速度
         const SonicSpeedLengthKiro = (SonicSpeed * NanaLiveSecond)/1000
-        document.querySelector('.Iroiro').textContent = `いままでの間、音速で移動すると、${SonicSpeedLengthKiro.toLocaleString()}キロメートル移動できます\n。これは、月と地球を${((SonicSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${((SonicSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
+        document.querySelector('.Iroiro').textContent = `いままでの間、音速で移動すると、${SonicSpeedLengthKiro.toLocaleString()}キロメートル移動できます。\nこれは、月と地球を${((SonicSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${((SonicSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
     }
     else {
         document.querySelector('.Iroiro').textContent = `これまでをわかりやすい単位に換算します！`;
@@ -143,12 +143,12 @@ function SelectedThings_Down() { //プルダウンに応じて表示を変えた
     else if (Selected ==="LightSpeed"){
         const LightSpeed = 300000000 //これはメートル(m/sだぜぇ)
         const LightSpeedLengthKiro = (LightSpeed * NanaLiveSecond)/1000
-        document.querySelector('.Iroiro').textContent = `これから光速で移動すると、${LightSpeedLengthKiro.toLocaleString()}キロメートル移動できます\n。これは、月と地球を${Math.trunc((LightSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${Math.trunc((LightSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
+        document.querySelector('.Iroiro').textContent = `これから光速で移動すると、${LightSpeedLengthKiro.toLocaleString()}キロメートル移動できます。\nこれは、月と地球を${Math.trunc((LightSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${Math.trunc((LightSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
     }
     else if (Selected ==="Sonic"){
         const SonicSpeed = 340 //これはメートル(m/sだぜぇ)、大気中で確か気温15.0セルシウス度の時の速度
         const SonicSpeedLengthKiro = (SonicSpeed * NanaLiveSecond)/1000
-        document.querySelector('.Iroiro').textContent = `これから音速で移動すると、${SonicSpeedLengthKiro.toLocaleString()}キロメートル移動できます\n。これは、月と地球を${((SonicSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${((SonicSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
+        document.querySelector('.Iroiro').textContent = `これから音速で移動すると、${SonicSpeedLengthKiro.toLocaleString()}キロメートル移動できます。\nこれは、月と地球を${((SonicSpeedLengthKiro / 384000)/2).toLocaleString()}回、太陽と地球を${((SonicSpeedLengthKiro / 149600000)/2).toLocaleString()}回往復できる距離です。`
     }
     else {
         document.querySelector('.Iroiro').textContent = `これからをわかりやすい単位に換算します！`;
