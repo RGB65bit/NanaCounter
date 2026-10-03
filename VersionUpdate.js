@@ -58,6 +58,11 @@ const UpdateLog = [
     Date:"20261003",
     Version:"v1.4.1",
     Description:"音速の換算のMath,truncを除去した。音が遅すぎて、数値が全く変わらないのである。"
+  },
+  {
+    Date:"20261003",
+    Version:"v1.4.2",
+    Description:"読点の位置が違っていたのを修正した。（。の前で改行していたのでね...w）"
   }
 ]
 
