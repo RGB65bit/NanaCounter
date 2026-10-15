@@ -194,5 +194,5 @@ function ChengeFonter(){
 }
 document.getElementById('ChangeFont').addEventListener('click',ChengeFonter)
 document.getElementById('CreditButton').addEventListener('click', () => {
-    alert(`【クレジット】\n使用フォント(Google Fonts):\nMochiy Pop One、Google Sans、Noto Sans JP、Kaisei Tokumin\nアイコン・背景画像:にじさんじ公式サイト、珠乃井ナナのページより\nプログラミング: RGB65bit(問い合わせもこちらにお寄せください)`)
+    alert(`【クレジット】\n使用フォント(Google Fonts):\nMochiy Pop One、Google Sans、Noto Sans JP、Kaisei Tokumin、LINE Seed JP\nアイコン・背景画像:にじさんじ公式サイト、珠乃井ナナのページより\nプログラミング: RGB65bit(問い合わせもこちらにお寄せください)`)
 })
