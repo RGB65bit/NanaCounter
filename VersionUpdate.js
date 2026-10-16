@@ -128,6 +128,11 @@ const UpdateLog = [
     Date:"202610160938",
     Version:"v2.0.1",
     Description:"ダイアログを開くと、なぜか最下層に移動していたので修正。"
+  },
+  {
+    Date:"202610161505",
+    Version:"v2.0.2",
+    Description:"index.html内のindex.htmlへのリンクを除去した。"
   }
 ]
 function Initializer(){
