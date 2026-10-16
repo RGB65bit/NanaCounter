@@ -123,6 +123,11 @@ const UpdateLog = [
     Date:"202610160626",
     Version:"v2.0.0",
     Description:"URLパラメータ機能を実装し、受付も作成も自動で行われるようになった。また、共有リンクを直リンクに変更し、パラメータをつけたリンクを自走挿入できるようにした。"
+  },
+  {
+    Date:"202610160938",
+    Version:"v2.0.1",
+    Description:"ダイアログを開くと、なぜか最下層に移動していたので修正。"
   }
 ]
 function Initializer(){
@@ -133,6 +138,7 @@ function Initializer(){
 function DispUpd8Log() {
   document.getElementById("Upd8Log").showModal()
   document.getElementById("Upd8LogCont").value = `${UpdateLog.toReversed().map(log => `日時: ${log.Date}\nバージョン: ${log.Version}\n更新内容: ${log.Description}\n\n`).join('')}`//日付ごとにまとめるのもあり
+  document.getElementById("Upd8LogCont").setSelectionRange(0, 0)
 }
 function CloseUpd8Log(){
   document.getElementById("Upd8Log").close()
