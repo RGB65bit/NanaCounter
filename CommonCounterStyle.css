@@ -1,0 +1,312 @@
+/*基本*/
+button{
+  cursor: pointer;
+}
+html {
+  background-image: url(Nana.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+body {
+  margin: 0px;
+  background-color: hsla(202, 70%, 70%, 0.9); 
+  color: #FFC547;
+  min-height: 100vh;
+}
+a{
+  color:#0000EE;
+}
+/*ヘッダー*/
+.header {
+  font-size: 20px;
+  background-color: #FFC547;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+.header2 {
+  display: flex;
+  align-items: center;
+}
+h1 {
+  margin: 0;
+  color: #63AED9;
+  padding-left: 10px;
+  cursor: default;
+}
+.NoDeco{
+  text-decoration: none;
+  color: inherit;
+}
+.NoDeco:hover{
+  text-decoration: none;
+  color: #FFC547;
+  cursor: pointer;
+}
+.Version {
+  color: #63AED9;
+  cursor: default;
+}
+.headershape {
+  background-color: #63AED9;
+  height: 10px;
+  width: 100%;
+}
+/*フォント変更ボタン*/
+#ChangeFont {
+  margin-left: auto;
+  margin-right: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #FFC547;
+  color: #63AED9;
+  border: 2px solid #FFF;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+#ChangeFont:hover {
+  background-color: #63AED9;
+  color: #000000;
+}
+/*ナビゲーションリンク*/
+nav {
+  justify-content: space-around;
+  overflow: hidden;
+  display: flex;
+}
+nav a {
+  font-size: 16px;
+  padding: 10px;
+  border: 3px solid #FFF;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+  color: #63AED9;
+  transition: 0.15s;
+}
+a:hover {
+  color: #000;
+  background-color: #63AED9;
+}
+.NavigatorInIndex {
+  background-color: #FFC547;
+}
+/*メインコンテンツ*/
+#TopExplain{
+  margin-left: 8px;
+}
+.InputBeNanakamaDate{
+  margin-left: 8px;
+}
+.content {
+  font-size: 40px;
+  margin: 0px;
+  margin-top: 20px;
+  text-align: center;
+  color: #FFC547;
+}
+.content2 {
+  line-height: 1;
+  font-size: 20px;
+  text-align: center;
+  color: #FFC547;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 8px;
+}
+.Iroiro {
+  white-space: pre-line;
+  margin-bottom: 24px;
+  margin-left: 8px;
+}
+#border {
+  margin: 0 auto;
+  border: 1px solid #FFF;
+  width: 95%;
+}
+.NanatamaFace {
+  background-color: #FFF;
+  display: block;
+  margin: 0 auto;
+  width: 35%;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid #FFC547;
+  box-shadow: 0 0 70px rgba(255, 255, 255, 0.3);
+}
+/*フォーム*/
+select {
+  margin: 10px;
+  padding: 10px 10px;
+  font-size: 16px;
+  background-color: #FFC547;
+  color: #63AED9;
+  border: 2px solid #FFF;
+  cursor: pointer;
+}
+select option {
+  background-color: #FFF;
+  color: #63AED9;
+}
+#CounterType {
+  border-radius: 14px 0px 0px 0px;
+}
+#WhatCanWeDoInTheTime {
+  border-radius: 0px 0px 0px 14px;
+}
+input {
+  background-color: #63AED9;
+  color: #FFC547;
+  border: 2px solid #FFF;
+}
+/*X共有*/
+#PostingLink {
+  display: table;
+  margin: 20px auto;
+  text-decoration: none;
+}
+#ShareToX {
+  display: block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #FFC547;
+  color: #63AED9;
+  border: 2px solid #FFF;
+  cursor: pointer;
+}
+#ShareToX:hover {
+  color: #000;
+  background-color: #63AED9;
+}
+/*プログレスバー*/
+#TergetDisp {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.ProgBarMain {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  background-color: #FFC547;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.ProgBarBox {
+  margin: 0 auto;
+  height: 20px;
+  width: 100%;
+  background-color: #63AED9;
+  border: #FFC547 1px solid;
+  box-sizing: border-box;
+}
+#BorderBorder {
+  border: #FFFFFF 2px solid;
+  width: 85%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#BarTitle {
+  margin-top: 4px;
+}
+/*フッター*/
+footer{
+  cursor: default;
+}
+.Credit {
+  width: 100%;
+  background: #FFC547;
+  color: #63AED9;
+  text-align: center;
+  padding: 10px 0px;
+  margin: 0;
+  font-size: 14px;
+}
+#CreditButton ,#Upd8LogButton{
+  margin-left: 7px;
+}
+/*ナヴィゲーションのスタイル*/
+.NavIndexBox{
+  margin-left: 8px;
+}
+/*更新情報のスタイル*/
+#DialogCont, #Dialog {
+  color: #FFC547;
+  background-color: #63AED9;
+  box-sizing: border-box;
+}
+#Dialog{
+  height: 85%;
+  width: 85%;
+  opacity: 0;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity .15s, display .15s allow-discrete, overlay .15s allow-discrete;
+}
+#Dialog[open] {
+  opacity: 1;
+  display: flex;
+}
+@starting-style {
+  #Dialog[open] {
+    opacity: 0;
+  }
+}
+#DialogHeader {
+  margin: 0 0 8px;
+  flex: none;
+  font-weight: normal;
+  border-bottom:#FFC547 2px solid;
+}
+#DialogClose{
+  background-color: #FFC547;
+  color: #63AED9;
+  border:#FFF 2px solid ;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-top: 14px;
+}
+#DialogClose:hover{
+  color: #000;
+  background-color: #63AED9;
+  transition: 0.15s;
+}
+#DialogCont{
+  line-height: 1.3;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  resize: none;
+  font-family: "Noto Sans JP";
+  font-weight: 500;
+  border: none;
+  cursor: default;
+  box-shadow:rgba(255, 255, 255, 0.3) 2px 2px 0px;
+}
+#DialogCont:focus{
+  outline: none;
+}
+/*開いているページの画面上部ナヴィゲーターの縁取り色を変えるやつ*/
+.Opened{
+  font-weight: bolder;
+  border: #63AED9 3px solid;
+}
